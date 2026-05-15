@@ -1,3 +1,5 @@
+@use 'sass:meta';
+
 /*!
 Theme Name: EventTrashBox
 Theme URI: https://github.com/sethtipton/eventtrashbox
@@ -10,7 +12,7 @@ Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: eventtrashbox
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-logo, custom-menu, featured-images, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -30,25 +32,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Elements
 	- Links
 	- Forms
-## Layouts
 # Components
 	- Navigation
 	- Posts and pages
-	- Comments
-	- Widgets
 	- Media
 	- Captions
 	- Galleries
-# plugins
-	- Jetpack infinite scroll
 # Utilities
 	- Accessibility
 	- Alignments
 
 --------------------------------------------------------------*/
 
-// Import variables and mixins.
-@import "abstracts/abstracts";
+// Load variables, tokens, and mixins.
+@include meta.load-css('abstracts/abstracts');
 
 /*--------------------------------------------------------------
 # Generic
@@ -56,35 +53,21 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Normalize
 --------------------------------------------- */
-@import "generic/normalize";
+@include meta.load-css('generic/normalize');
 
 /* Box sizing
 --------------------------------------------- */
-@import "generic/box-sizing";
+@include meta.load-css('generic/box-sizing');
 
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-@import "base/base";
-
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+@include meta.load-css('base/base');
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "components/components";
-
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-
-/* Jetpack infinite scroll
---------------------------------------------- */
-@import "plugins/jetpack/infinite-scroll";
+@include meta.load-css('components/components');
 
 /*--------------------------------------------------------------
 # Utilities
@@ -92,8 +75,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Accessibility
 --------------------------------------------- */
-@import "utilities/accessibility";
+@include meta.load-css('utilities/accessibility');
 
 /* Alignments
 --------------------------------------------- */
-@import "utilities/alignments";
+@include meta.load-css('utilities/alignments');

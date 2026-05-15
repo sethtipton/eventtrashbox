@@ -1,7 +1,7 @@
 === EventTrashBox ===
 
 Contributors: sethtipton
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-logo, custom-menu, featured-images, translation-ready
 
 Requires at least: 5.8
 Tested up to: 6.5

@@ -12,11 +12,32 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<?php
-			echo esc_html( get_bloginfo( 'name' ) ) . ' &copy; ' . esc_html( gmdate( 'Y' ) );
-			?>
-		</div><!-- .site-info -->
+		<div class="site-footer__inner">
+			<div class="site-footer__brand">
+				<p class="site-footer__title"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
+				<p class="site-info">
+					<?php
+					echo esc_html( get_bloginfo( 'name' ) ) . ' &copy; ' . esc_html( gmdate( 'Y' ) );
+					?>
+				</p>
+			</div>
+
+			<?php if ( has_nav_menu( EVENTTRASHBOX_MENU_FOOTER ) ) : ?>
+				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer menu', 'eventtrashbox' ); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => EVENTTRASHBOX_MENU_FOOTER,
+							'menu_id'        => EVENTTRASHBOX_MENU_FOOTER,
+							'depth'          => 1,
+						)
+					);
+					?>
+				</nav>
+			<?php endif; ?>
+
+			<?php eventtrashbox_button( home_url( '/contact/' ), __( 'Request a quote', 'eventtrashbox' ), 'site-footer__cta' ); ?>
+		</div><!-- .site-footer__inner -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

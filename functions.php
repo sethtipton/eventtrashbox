@@ -7,10 +7,8 @@
  * @package EventTrashBox
  */
 
-if ( ! defined( 'EVENTTRASHBOX_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( 'EVENTTRASHBOX_VERSION', '1.0.0' );
-}
+require get_template_directory() . '/inc/constants.php';
+require get_template_directory() . '/inc/helpers.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -43,11 +41,16 @@ function eventtrashbox_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( EVENTTRASHBOX_IMAGE_SIZE_HERO, 1920, 960, true );
+	add_image_size( EVENTTRASHBOX_IMAGE_SIZE_PAGE_FEATURE, 1280, 720, true );
+	add_image_size( EVENTTRASHBOX_IMAGE_SIZE_CARD, 720, 540, true );
+	add_image_size( EVENTTRASHBOX_IMAGE_SIZE_GALLERY, 960, 720, true );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Register theme menu locations.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'eventtrashbox' ),
+			EVENTTRASHBOX_MENU_PRIMARY => esc_html__( 'Primary', 'eventtrashbox' ),
+			EVENTTRASHBOX_MENU_FOOTER  => esc_html__( 'Footer', 'eventtrashbox' ),
 		)
 	);
 
@@ -59,8 +62,6 @@ function eventtrashbox_setup() {
 		'html5',
 		array(
 			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 			'style',
@@ -68,20 +69,13 @@ function eventtrashbox_setup() {
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'eventtrashbox_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'appearance-tools' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'wp-block-styles' );
 
 	/**
 	 * Add support for core custom logo.
@@ -101,6 +95,19 @@ function eventtrashbox_setup() {
 add_action( 'after_setup_theme', 'eventtrashbox_setup' );
 
 /**
+ * Register block pattern categories.
+ */
+function eventtrashbox_register_pattern_categories() {
+	register_block_pattern_category(
+		'eventtrashbox',
+		array(
+			'label' => esc_html__( 'EventTrashBox', 'eventtrashbox' ),
+		)
+	);
+}
+add_action( 'init', 'eventtrashbox_register_pattern_categories' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -113,44 +120,15 @@ function eventtrashbox_content_width() {
 add_action( 'after_setup_theme', 'eventtrashbox_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function eventtrashbox_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'eventtrashbox' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'eventtrashbox' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'eventtrashbox_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function eventtrashbox_scripts() {
-	wp_enqueue_style( 'eventtrashbox-style', get_stylesheet_uri(), array(), EVENTTRASHBOX_VERSION );
-	wp_style_add_data( 'eventtrashbox-style', 'rtl', 'replace' );
+	wp_enqueue_style( EVENTTRASHBOX_STYLE_HANDLE, get_stylesheet_uri(), array(), EVENTTRASHBOX_VERSION );
+	wp_style_add_data( EVENTTRASHBOX_STYLE_HANDLE, 'rtl', 'replace' );
 
-	wp_enqueue_script( 'eventtrashbox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), EVENTTRASHBOX_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( EVENTTRASHBOX_NAVIGATION_HANDLE, get_template_directory_uri() . '/js/navigation.js', array(), EVENTTRASHBOX_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'eventtrashbox_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -166,10 +144,3 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}

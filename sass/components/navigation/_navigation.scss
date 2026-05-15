@@ -22,7 +22,6 @@
 			}
 
 			li {
-
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
@@ -76,7 +75,6 @@
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
@@ -89,7 +87,6 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 	}

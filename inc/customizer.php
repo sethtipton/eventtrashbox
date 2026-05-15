@@ -56,6 +56,6 @@ function eventtrashbox_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function eventtrashbox_customize_preview_js() {
-	wp_enqueue_script( 'eventtrashbox-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), EVENTTRASHBOX_VERSION, true );
+	wp_enqueue_script( EVENTTRASHBOX_CUSTOMIZER_HANDLE, get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), EVENTTRASHBOX_VERSION, true );
 }
 add_action( 'customize_preview_init', 'eventtrashbox_customize_preview_js' );

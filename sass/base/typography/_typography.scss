@@ -1,3 +1,7 @@
+@use '../../abstracts/abstracts' as *;
+@use 'headings';
+@use 'copy';
+
 body,
 button,
 input,
@@ -9,6 +13,3 @@ textarea {
 	font-size: 1rem;
 	line-height: $font__line-height-body;
 }
-
-@import "headings";
-@import "copy";

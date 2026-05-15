@@ -50,33 +50,20 @@ msgstr ""
 msgid "Older posts may be tucked away in the monthly archives."
 msgstr ""
 
-#. translators: 1: title.
-#: comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
-#. translators: 1: comment count number, 2: title.
-#: comments.php:41
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: comments.php:68
-msgid "Comments are closed."
-msgstr ""
-
 #: functions.php:53
 msgid "Primary"
 msgstr ""
 
-#: functions.php:130
-msgid "Sidebar"
+#: functions.php:54
+msgid "Footer"
 msgstr ""
 
-#: functions.php:132
-msgid "Add widgets here."
+#: footer.php:26
+msgid "Footer menu"
+msgstr ""
+
+#: footer.php:40
+msgid "Request a quote"
 msgstr ""
 
 #: header.php:26
@@ -120,27 +107,11 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#. translators: %s: post title
-#: inc/template-tags.php:83
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
-
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100
+#: inc/template-tags.php:80
 #: template-parts/content-page.php:39
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
-
-#: inc/woocommerce.php:186
-msgid "View your shopping cart"
-msgstr ""
-
-#. translators: number of items in the mini cart.
-#: inc/woocommerce.php:190
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
 
 #. translators: %s: search query.
 #: search.php:22

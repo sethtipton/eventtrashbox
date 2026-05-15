@@ -18,8 +18,8 @@
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
-			printf(
-				'<p>' . wp_kses(
+			$message = sprintf(
+				wp_kses(
 					/* translators: 1: link to WP admin new post page. */
 					__( 'Ready to publish the first EventTrashBox post? <a href="%1$s">Start writing</a>.', 'eventtrashbox' ),
 					array(
@@ -27,9 +27,13 @@
 							'href' => array(),
 						),
 					)
-				) . '</p>',
+				),
 				esc_url( admin_url( 'post-new.php' ) )
 			);
+			?>
+
+			<p><?php echo $message; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php
 
 		elseif ( is_search() ) :
 			?>

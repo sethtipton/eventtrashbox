@@ -1,0 +1,7 @@
+node_modules/
+vendor/
+style.css
+style-rtl.css
+style.css.map
+package-lock.json
+*.zip

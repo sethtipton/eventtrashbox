@@ -15,6 +15,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php if ( eventtrashbox_get_meta_description() ) : ?>
+		<meta name="description" content="<?php echo esc_attr( eventtrashbox_get_meta_description() ); ?>">
+	<?php endif; ?>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -31,17 +34,17 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></p>
 				<?php
 			endif;
 			$eventtrashbox_description = get_bloginfo( 'description', 'display' );
 			if ( $eventtrashbox_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $eventtrashbox_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo esc_html( $eventtrashbox_description ); ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
@@ -50,7 +53,7 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
+					'theme_location' => EVENTTRASHBOX_MENU_PRIMARY,
 					'menu_id'        => 'primary-menu',
 				)
 			);

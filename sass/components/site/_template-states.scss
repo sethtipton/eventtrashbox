@@ -1,0 +1,140 @@
+.sticky .entry-title::before {
+	color: var(--etb-color-accent-dark);
+	content: 'Featured';
+	display: block;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin-bottom: var(--etb-space-xs);
+	text-transform: uppercase;
+}
+
+.post-thumbnail {
+	display: block;
+	margin: var(--etb-space-lg) auto;
+	max-width: var(--etb-container-narrow);
+}
+
+.post-thumbnail img {
+	aspect-ratio: 16 / 9;
+	border-radius: var(--etb-radius-md);
+	display: block;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.page-header,
+.no-results,
+.error-404 {
+	padding-bottom: var(--etb-space-xl);
+	padding-top: var(--etb-space-xl);
+}
+
+.page-header .page-title {
+	margin-bottom: 0;
+}
+
+.page-header .archive-description {
+	color: var(--etb-color-muted);
+	max-width: var(--etb-container-narrow);
+}
+
+.entry-meta,
+.entry-footer,
+.page-links {
+	color: var(--etb-color-muted);
+	font-size: 0.9rem;
+}
+
+.entry-meta a,
+.entry-footer a,
+.page-links a {
+	color: var(--etb-color-accent-dark);
+}
+
+.entry-summary {
+	color: var(--etb-color-muted);
+}
+
+.posts-navigation,
+.post-navigation {
+	border-top: 1px solid var(--etb-color-border);
+	margin-top: var(--etb-space-xl);
+	padding-top: var(--etb-space-lg);
+}
+
+.nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--etb-space-md);
+	justify-content: space-between;
+}
+
+.nav-links a,
+.page-links a,
+.page-links .post-page-numbers {
+	border: 1px solid var(--etb-color-border);
+	border-radius: var(--etb-radius-sm);
+	display: inline-flex;
+	padding: 0.55rem 0.75rem;
+	text-decoration: none;
+}
+
+.page-links .current {
+	background: var(--etb-color-soft);
+}
+
+.search-form {
+	align-items: end;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--etb-space-sm);
+	margin-top: var(--etb-space-lg);
+}
+
+.search-form label {
+	flex: 1 1 240px;
+}
+
+.search-form .search-field {
+	min-height: 44px;
+	width: 100%;
+}
+
+.search-form .search-submit {
+	min-height: 44px;
+}
+
+.error-404 .page-content,
+.no-results .page-content {
+	max-width: var(--etb-container-narrow);
+}
+
+.post-password-form {
+	background: var(--etb-color-surface);
+	border: 1px solid var(--etb-color-border);
+	border-radius: var(--etb-radius-md);
+	padding: var(--etb-space-lg);
+}
+
+.post-password-form p:last-child {
+	align-items: end;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--etb-space-sm);
+}
+
+.post-password-form input[type='password'] {
+	min-height: 44px;
+}
+
+.post-password-form input[type='submit'] {
+	min-height: 44px;
+}
+
+@media (max-width: 600px) {
+	.nav-links {
+		display: grid;
+	}
+}

@@ -74,25 +74,6 @@ if ( ! function_exists( 'eventtrashbox_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'eventtrashbox' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
-		}
-
 		edit_post_link(
 			sprintf(
 				wp_kses(
@@ -128,15 +109,15 @@ if ( ! function_exists( 'eventtrashbox_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail( EVENTTRASHBOX_IMAGE_SIZE_PAGE_FEATURE ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<a class="post-thumbnail" href="<?php echo esc_url( get_permalink() ); ?>" aria-hidden="true" tabindex="-1">
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
+						EVENTTRASHBOX_IMAGE_SIZE_CARD,
 						array(
 							'alt' => the_title_attribute(
 								array(

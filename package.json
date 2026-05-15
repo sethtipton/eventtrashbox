@@ -1,47 +1,58 @@
 {
-  "name": "eventtrashbox",
-  "version": "1.0.0",
-  "description": "A custom WordPress theme for EventTrashBox.",
-  "author": "Seth Tipton",
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "WordPress",
-    "Theme",
-    "EventTrashBox"
-  ],
-  "homepage": "https://github.com/sethtipton/eventtrashbox#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sethtipton/eventtrashbox.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sethtipton/eventtrashbox/issues"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
-    "dir-archiver": "^1.1.1",
-    "rtlcss": "^3.5.0",
-    "sass": "^1.69.0"
-  },
-  "rtlcssConfig": {
-    "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
-    },
-    "plugins": [],
-    "map": false
-  },
-  "scripts": {
-    "watch": "sass sass/:./ --source-map --style=expanded --watch",
-    "compile:css": "sass sass/:./ --style=expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../eventtrashbox.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
-  }
+	"name": "eventtrashbox",
+	"version": "1.0.0",
+	"description": "A custom WordPress theme for EventTrashBox.",
+	"author": "Seth Tipton",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Theme",
+		"EventTrashBox"
+	],
+	"homepage": "https://github.com/sethtipton/eventtrashbox#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sethtipton/eventtrashbox.git"
+	},
+	"bugs": {
+		"url": "https://github.com/sethtipton/eventtrashbox/issues"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^19.2.2",
+		"dir-archiver": "^1.1.1",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.10.0",
+		"prettier": "^2.8.8",
+		"rtlcss": "^3.5.0",
+		"sass": "^1.69.0",
+		"stylelint": "^13.13.1",
+		"stylelint-config-prettier": "^9.0.5"
+	},
+	"rtlcssConfig": {
+		"options": {
+			"autoRename": false,
+			"autoRenameStrict": false,
+			"blacklist": {},
+			"clean": true,
+			"greedy": false,
+			"processUrls": false,
+			"stringMap": []
+		},
+		"plugins": [],
+		"map": false
+	},
+	"scripts": {
+		"watch": "sass sass/:./ --no-source-map --style=expanded --watch",
+		"compile:css": "sass sass/:./ --no-source-map --style=expanded",
+		"compile:rtl": "rtlcss style.css style-rtl.css",
+		"build": "npm run compile:css && npm run compile:rtl",
+		"check": "npm run format:check && npm run lint && npm run build",
+		"format": "prettier --write \".*.json\" \"*.{json,md}\" \"js/**/*.js\" \"sass/**/*.scss\"",
+		"format:check": "prettier --check \".*.json\" \"*.{json,md}\" \"js/**/*.js\" \"sass/**/*.scss\"",
+		"lint": "npm run lint:js && npm run lint:scss",
+		"lint:fix": "npm run lint:js -- --fix && npm run lint:scss -- --fix",
+		"lint:scss": "stylelint \"sass/**/*.scss\"",
+		"lint:js": "eslint \"js/**/*.js\"",
+		"bundle": "dir-archiver --src . --dest ../eventtrashbox.zip --exclude .DS_Store .stylelintrc.json .stylelintignore .eslintrc .eslintrc.json .eslintignore .prettierrc.json .prettierignore .git .gitattributes .github .gitignore README.md node_modules vendor package-lock.json package.json .travis.yml sass style.css.map yarn.lock"
+	}
 }
