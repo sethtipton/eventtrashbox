@@ -48,13 +48,16 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'eventtrashbox' ); ?></button>
+		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'eventtrashbox' ); ?>">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="menu-toggle__label"><?php esc_html_e( 'Menu', 'eventtrashbox' ); ?></span>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => EVENTTRASHBOX_MENU_PRIMARY,
 					'menu_id'        => 'primary-menu',
+					'depth'          => 3,
 				)
 			);
 			?>

@@ -1,4 +1,5 @@
 .DS_Store
+CLIENT_NOTES.md
 node_modules/
 vendor/
 *.log

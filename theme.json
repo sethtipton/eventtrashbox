@@ -2,9 +2,14 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
-		"appearanceTools": true,
+		"appearanceTools": false,
 		"color": {
-			"custom": true,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
 			"palette": [
 				{
 					"color": "#181816",
@@ -48,6 +53,9 @@
 			"wideSize": "1120px"
 		},
 		"spacing": {
+			"blockGap": true,
+			"customSpacingSize": false,
+			"padding": true,
 			"spacingScale": {
 				"operator": "*",
 				"increment": 1.5,
@@ -55,9 +63,17 @@
 				"mediumStep": 1.5,
 				"unit": "rem"
 			},
-			"units": ["px", "rem", "%", "vh", "vw"]
+			"units": ["rem", "%"]
 		},
 		"typography": {
+			"customFontSize": false,
+			"dropCap": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",

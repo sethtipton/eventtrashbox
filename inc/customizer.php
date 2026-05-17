@@ -11,9 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function eventtrashbox_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -56,6 +55,6 @@ function eventtrashbox_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function eventtrashbox_customize_preview_js() {
-	wp_enqueue_script( EVENTTRASHBOX_CUSTOMIZER_HANDLE, get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), EVENTTRASHBOX_VERSION, true );
+	wp_enqueue_script( EVENTTRASHBOX_CUSTOMIZER_HANDLE, get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), eventtrashbox_asset_version( 'js/customizer.js' ), true );
 }
 add_action( 'customize_preview_init', 'eventtrashbox_customize_preview_js' );

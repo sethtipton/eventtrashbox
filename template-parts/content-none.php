@@ -38,14 +38,14 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'No results for that search. Try a different phrase or browse the latest posts.', 'eventtrashbox' ); ?></p>
+			<p><?php esc_html_e( 'No results for that search. Try a different phrase, browse products, or review frequently asked questions.', 'eventtrashbox' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'There is nothing here yet. Search the site or check back after new posts are published.', 'eventtrashbox' ); ?></p>
+			<p><?php esc_html_e( 'There is nothing here yet. Search the site or browse the main product and support pages.', 'eventtrashbox' ); ?></p>
 			<?php
 			get_search_form();
 

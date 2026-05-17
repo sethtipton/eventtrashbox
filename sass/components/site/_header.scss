@@ -1,13 +1,19 @@
 .site-header {
 	background: var(--etb-color-canvas);
+	border-bottom: 1px solid var(--etb-color-border);
 	padding: var(--etb-space-lg);
 }
 
-.site-branding,
-.main-navigation {
+.site-header {
+	align-items: center;
+	box-sizing: border-box;
+	display: grid;
+	gap: var(--etb-space-lg);
+	grid-template-columns: minmax(180px, 320px) minmax(0, 1fr);
 	margin-left: auto;
 	margin-right: auto;
 	max-width: var(--etb-container);
+	width: 100%;
 }
 
 .site-title,
@@ -23,10 +29,8 @@
 
 .site-description {
 	color: var(--etb-color-muted);
-}
-
-.main-navigation {
-	margin-top: var(--etb-space-md);
+	font-size: 0.9rem;
+	line-height: 1.35;
 }
 
 .main-navigation a {
@@ -36,6 +40,7 @@
 
 @media (max-width: 800px) {
 	.site-header {
+		grid-template-columns: 1fr;
 		padding-left: var(--etb-space-md);
 		padding-right: var(--etb-space-md);
 	}

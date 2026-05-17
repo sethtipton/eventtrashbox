@@ -1,44 +1,59 @@
 <?php
 /**
- * Title: Use cases
+ * Title: Use Case Grid
  * Slug: eventtrashbox/use-cases
  * Categories: eventtrashbox
- * Description: A stacked list of editable use cases.
+ * Description: A grid of common event use cases.
  *
  * @package EventTrashBox
  */
 ?>
 
-<!-- wp:group {"align":"wide","className":"etb-pattern-section etb-pattern-split-list","layout":{"type":"constrained"}} -->
-<div id="use-cases" class="wp-block-group alignwide etb-pattern-section etb-pattern-split-list">
-	<!-- wp:paragraph {"className":"etb-pattern-eyebrow"} -->
-	<p class="etb-pattern-eyebrow">Use cases</p>
+<!-- wp:group {"align":"wide","className":"is-style-section-default","layout":{"type":"constrained"}} -->
+<div id="use-cases" class="wp-block-group alignwide is-style-section-default">
+	<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+	<p class="is-style-eyebrow">Use cases</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:heading -->
-	<h2 class="wp-block-heading">Where this fits</h2>
+	<!-- wp:heading {"className":"is-style-section-heading"} -->
+	<h2 class="wp-block-heading is-style-section-heading">Boxes for the places people gather.</h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"etb-pattern-split-list__item","layout":{"type":"constrained"}} -->
-	<div class="wp-block-group etb-pattern-split-list__item">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">Private events</h3>
-		<!-- /wp:heading -->
-		<!-- wp:paragraph -->
-		<p>Backyard parties, receptions, fundraisers, and gatherings that need cleanup handled without extra friction.</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:columns {"className":"is-style-feature-grid"} -->
+	<div class="wp-block-columns is-style-feature-grid">
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":3,"className":"is-style-card-heading"} -->
+			<h3 class="wp-block-heading is-style-card-heading">Trade shows & conventions</h3>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Branded booth cleanup, aisle recycling points, and sponsor-supported collection stations.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:column -->
 
-	<!-- wp:group {"className":"etb-pattern-split-list__item","layout":{"type":"constrained"}} -->
-	<div class="wp-block-group etb-pattern-split-list__item">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">Community events</h3>
-		<!-- /wp:heading -->
-		<!-- wp:paragraph -->
-		<p>Markets, school events, neighborhood gatherings, and local activations with predictable waste needs.</p>
-		<!-- /wp:paragraph -->
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":3,"className":"is-style-card-heading"} -->
+			<h3 class="wp-block-heading is-style-card-heading">Festivals & outdoor events</h3>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Visible waste and recycling stations that are simple to deploy across food, merch, and entry areas.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":3,"className":"is-style-card-heading"} -->
+			<h3 class="wp-block-heading is-style-card-heading">Donation & collection drives</h3>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Clear containers for cans, clothing, ballots, giveaways, samples, or community drop-off programs.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:column -->
 	</div>
-	<!-- /wp:group -->
+	<!-- /wp:columns -->
 </div>
 <!-- /wp:group -->

@@ -39,15 +39,31 @@ msgid "This page missed the pickup."
 msgstr ""
 
 #: 404.php:22
-msgid "The link may be old, moved, or tossed. Try a search or browse recent posts below."
+msgid "The link may be old, moved, or no longer available. Try a search or choose a helpful starting point below."
 msgstr ""
 
 #: 404.php:31
-msgid "Popular Categories"
+msgid "Helpful pages"
 msgstr ""
 
-#: 404.php:49
-msgid "Older posts may be tucked away in the monthly archives."
+#: 404.php:33
+msgid "Browse products"
+msgstr ""
+
+#: 404.php:34
+msgid "Compare box options"
+msgstr ""
+
+#: 404.php:35
+msgid "View the gallery"
+msgstr ""
+
+#: 404.php:36
+msgid "Read frequently asked questions"
+msgstr ""
+
+#: 404.php:37
+msgid "Request a quote"
 msgstr ""
 
 #: functions.php:53
@@ -136,11 +152,11 @@ msgid "Ready to publish the first EventTrashBox post? <a href=\"%1$s\">Start wri
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid "No results for that search. Try a different phrase or browse the latest posts."
+msgid "No results for that search. Try a different phrase, browse products, or review frequently asked questions."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid "There is nothing here yet. Search the site or check back after new posts are published."
+msgid "There is nothing here yet. Search the site or browse the main product and support pages."
 msgstr ""
 
 #: template-parts/content-page.php:25

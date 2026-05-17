@@ -29,14 +29,14 @@
 						array(
 							'theme_location' => EVENTTRASHBOX_MENU_FOOTER,
 							'menu_id'        => EVENTTRASHBOX_MENU_FOOTER,
-							'depth'          => 1,
+							'depth'          => 2,
 						)
 					);
 					?>
 				</nav>
 			<?php endif; ?>
 
-			<?php eventtrashbox_button( home_url( '/contact/' ), __( 'Request a quote', 'eventtrashbox' ), 'site-footer__cta' ); ?>
+			<?php eventtrashbox_button( home_url( '/quote/' ), __( 'Get a Quote', 'eventtrashbox' ), 'site-footer__cta' ); ?>
 		</div><!-- .site-footer__inner -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

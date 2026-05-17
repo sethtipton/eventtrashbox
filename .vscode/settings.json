@@ -1,0 +1,12 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"eslint.validate": ["javascript"],
+	"files.associations": {
+		"*.php": "php"
+	},
+	"intelephense.environment.includePaths": [
+		"/Users/sethtipton/Local Sites/eventtrashbox/app/public"
+	],
+	"stylelint.validate": ["scss", "css"]
+}

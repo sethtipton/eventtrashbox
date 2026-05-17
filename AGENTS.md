@@ -18,6 +18,7 @@ EventTrashBox is a custom WordPress theme for a standalone Event Boxes business.
 ## Local Workflow
 
 - Use the Local app for the WordPress runtime.
+- Use the Node version pinned in `.nvmrc`.
 - Work from this directory:
 
 ```sh
@@ -25,4 +26,8 @@ EventTrashBox is a custom WordPress theme for a standalone Event Boxes business.
 ```
 
 - Run `npm run watch` while editing Sass.
+- `npm run dev` is the preferred alias for Sass watch mode.
+- Run `npm run doctor` when local tooling or Local PHP paths look wrong.
+- Run `npm run clean` only for stale generated artifacts such as source maps.
 - Run `npm run check` before considering frontend/theme changes complete.
+- Do not edit `style.css` or `style-rtl.css` directly; rebuild them from Sass.

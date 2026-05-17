@@ -1,36 +1,36 @@
 <?php
 /**
- * Title: Hero
+ * Title: Homepage Hero
  * Slug: eventtrashbox/hero
  * Categories: eventtrashbox
- * Description: A simple homepage hero with headline, copy, and buttons.
+ * Description: A full-width homepage hero for the primary EventTrashBox offer.
  *
  * @package EventTrashBox
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"etb-block-hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull etb-block-hero">
-	<!-- wp:paragraph {"className":"etb-pattern-eyebrow"} -->
-	<p class="etb-pattern-eyebrow">EventTrashBox</p>
+<!-- wp:group {"align":"full","className":"is-style-section-muted","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-muted">
+	<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+	<p class="is-style-eyebrow">Custom printed event trash boxes</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:heading {"level":1,"className":"etb-block-hero__title"} -->
-	<h1 class="wp-block-heading etb-block-hero__title">Simple cleanup support for busy events.</h1>
+	<!-- wp:heading {"level":1,"className":"is-style-hero-heading"} -->
+	<h1 class="wp-block-heading is-style-hero-heading">Cleaner events, branded from every angle.</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"className":"etb-block-hero__copy"} -->
-	<p class="etb-block-hero__copy">Use this section to introduce the service, who it is for, and what action visitors should take next.</p>
+	<!-- wp:paragraph {"className":"is-style-lead"} -->
+	<p class="is-style-lead">EventTrashBox helps teams plan custom cardboard trash, recycling, and collection boxes for trade shows, festivals, donation drives, and branded event spaces.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
-		<!-- wp:button -->
-		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact/">Request a quote</a></div>
+		<!-- wp:button {"className":"is-style-large-cta"} -->
+		<div class="wp-block-button is-style-large-cta"><a class="wp-block-button__link wp-element-button" href="/quote/">Get a Quote</a></div>
 		<!-- /wp:button -->
 
 		<!-- wp:button {"className":"is-style-outline"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#use-cases">See use cases</a></div>
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/products/">View Products</a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

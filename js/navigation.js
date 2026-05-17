@@ -31,6 +31,20 @@
 		menu.classList.add('nav-menu');
 	}
 
+	/**
+	 * Closes the mobile navigation and optionally returns focus to the toggle.
+	 *
+	 * @param {boolean} returnFocus Whether to move focus back to the toggle.
+	 */
+	function closeNavigation(returnFocus) {
+		siteNavigation.classList.remove('toggled');
+		button.setAttribute('aria-expanded', 'false');
+
+		if (returnFocus) {
+			button.focus();
+		}
+	}
+
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener('click', function () {
 		siteNavigation.classList.toggle('toggled');
@@ -44,8 +58,14 @@
 		const isClickInside = siteNavigation.contains(event.target);
 
 		if (!isClickInside) {
-			siteNavigation.classList.remove('toggled');
-			button.setAttribute('aria-expanded', 'false');
+			closeNavigation(false);
+		}
+	});
+
+	// Close the mobile navigation with Escape.
+	document.addEventListener('keydown', function (event) {
+		if ('Escape' === event.key && siteNavigation.classList.contains('toggled')) {
+			closeNavigation(true);
 		}
 	});
 
